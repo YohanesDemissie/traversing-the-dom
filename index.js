@@ -6,7 +6,7 @@ const root = document.getElementById("body");
 const imageHeader = document.createElement("img");
 
 //create h1 element
-const h1 = document.createElement("h1");
+let h1 = document.createElement("h1");
 
 //create text node for h1 element
 const h1Text = document.createTextNode("Hello World");
@@ -20,14 +20,23 @@ header.appendChild(imageHeader)
 header.insertBefore(imageHeader, header.firstChild);
 
 //append h1 element to head node
-root.appendChild(h1);
+// imageHeader.insertAfter(h1, imageHeader.firstChild.nextSibling);
 
 //setting attriubte to image to render image from url
 imageHeader.setAttribute("src", "https://media4.s-nbcnews.com/j/newscms/2016_36/1685951/ss-160826-twip-05_8cf6d4cb83758449fd400c7c3d71aa1f.fit-760w.jpg");
 //set attribute to image tag for screen reading softwares
+
 imageHeader.setAttribute("alt", "panda");
 //set id attribute to h1 element
+
+imageHeader.setAttribute("id", "imageHeader")
+
 h1.setAttribute("id", "title");
 //append text to h1 tag
+
 h1.appendChild(h1Text);
+
+//append h1 as next sibling element to imageHeader 
+imageHeader.insertAdjacentElement("afterend", h1);
+
 
